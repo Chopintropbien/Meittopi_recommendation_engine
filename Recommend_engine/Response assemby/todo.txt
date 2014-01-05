@@ -1,0 +1,4 @@
+In this module:
+ - pull the list of suggester restaurants / suggested people that is to be send back to the user
+ - add the user/restaurant photo
+ - send the JSON/BSON package back to frontend

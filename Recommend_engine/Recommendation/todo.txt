@@ -1,0 +1,6 @@
+Grab the information from the request
+ - if it is an information retrieval request, execute it.
+   - special cases:
+      - restaurant search
+      - user search
+ - if it is an information update request, update the information, update the depending informations
