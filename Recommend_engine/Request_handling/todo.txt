@@ -1,5 +1,0 @@
-In this module: unwrap and parse the incoming request.
-Recover:
-    - what user is searching, user profile, his "restaurant context" and "search context"
-    - what user is submitting as a review and/or photo.
-    - user "Follow" request
