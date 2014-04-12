@@ -74,9 +74,6 @@ class ListFormatter(object):
         return all(self.generic_formatter.verify(val) for val in list_dict.itervalues())
 
 
-Composite_formatter
-
-
 class CompositeFormatter(object):
 
     def __init__(self, field_names, types, example):

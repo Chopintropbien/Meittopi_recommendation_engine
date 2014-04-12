@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33eee1a9-c28d-4c90-b354-29d25ccbfd75" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Recommend_engine/Recommendation/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Recommend_engine/Recommendation/todo.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Recommend_engine/Request_handling/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Recommend_engine/Request_handling/todo.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Recommend_engine/Response assemby/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Recommend_engine/Response assemby/todo.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Recommend_engine/Unittests/__init__.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Meittopi_recommendation_engine.iml" afterPath="$PROJECT_DIR$/.idea/Meittopi_recommendation_engine.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Recommend_engine/middle_ware/Common_tools.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Recommend_engine/middle_ware/Profile.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Recommend_engine/middle_ware/Response_asembly_routines.py" afterPath="$PROJECT_DIR$/Recommend_engine/middle_ware/Person.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recommend_engine/API_specifications.py" afterPath="$PROJECT_DIR$/Recommend_engine/API_specifications.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recommend_engine/neo4j_manager/db_dec.py" afterPath="$PROJECT_DIR$/Recommend_engine/neo4j_manager/db_dec.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py" afterPath="$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Meittopi_recommendation_engine.iws" />
@@ -40,19 +36,8 @@
           <file leaf-file-name="API_specifications.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Recommend_engine/API_specifications.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="76" column="19" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2100">
+                <state line="75" column="0" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="2055">
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="type_dec.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="117" column="0" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="2205">
-                  <folding>
-                    <element signature="e#24#66#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -66,10 +51,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Response_asembly_routines.py" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Recommend_engine/middle_ware/Response_asembly_routines.py">
+          <file leaf-file-name="Profile.py" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Recommend_engine/middle_ware/Profile.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="44" column="50" selection-start="850" selection-end="850" vertical-scroll-proportion="0.14516129" vertical-offset="525" max-vertical-offset="1635">
+                <state line="104" column="41" selection-start="3162" selection-end="3162" vertical-scroll-proportion="1.6774193" vertical-offset="0" max-vertical-offset="1890">
+                  <folding>
+                    <element signature="e#23#81#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Common_tools.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Recommend_engine/middle_ware/Common_tools.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="16" column="40" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
                   <folding />
                 </state>
               </provider>
@@ -79,12 +75,32 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="type_dec.py" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="db_dec.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Recommend_engine/neo4j_manager/db_dec.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="47" column="18" selection-start="1757" selection-end="1757" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+                  <folding>
+                    <element signature="e#23#80#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="type_dec.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="41" column="0" selection-start="795" selection-end="795" vertical-scroll-proportion="0.20967741" vertical-offset="420" max-vertical-offset="2205">
+                <state line="3" column="36" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2280">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Person.py" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Recommend_engine/middle_ware/Person.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="81" column="23" selection-start="2223" selection-end="2223" vertical-scroll-proportion="0.49291167" vertical-offset="763" max-vertical-offset="1905">
                   <folding>
-                    <element signature="e#24#66#0" expanded="true" />
+                    <element signature="e#23#81#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -108,13 +124,16 @@
       <list>
         <option value="$PROJECT_DIR$/Recommend_engine/Response assemby/todo.txt" />
         <option value="$PROJECT_DIR$/Recommend_engine/Recommendation/todo.txt" />
-        <option value="$PROJECT_DIR$/Recommend_engine/API_specifications.py" />
         <option value="$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_declarations.py" />
-        <option value="$PROJECT_DIR$/Recommend_engine/neo4j_manager/db_dec.py" />
         <option value="$PROJECT_DIR$/Recommend_engine/neo4j_manager/graph_routines.py" />
         <option value="$PROJECT_DIR$/Recommend_engine/neo4j_manager/IO_routines.py" />
-        <option value="$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py" />
+        <option value="$PROJECT_DIR$/Recommend_engine/neo4j_manager/db_dec.py" />
+        <option value="$PROJECT_DIR$/Recommend_engine/API_specifications.py" />
+        <option value="$PROJECT_DIR$/Recommend_engine/middle_ware/Common_tools.py" />
         <option value="$PROJECT_DIR$/Recommend_engine/middle_ware/Response_asembly_routines.py" />
+        <option value="$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py" />
+        <option value="$PROJECT_DIR$/Recommend_engine/middle_ware/Person.py" />
+        <option value="$PROJECT_DIR$/Recommend_engine/middle_ware/Profile.py" />
       </list>
     </option>
   </component>
@@ -131,7 +150,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -407,6 +426,15 @@
       <created>1388940082579</created>
       <updated>1388940082579</updated>
     </task>
+    <task id="LOCAL-00001" summary="init_push">
+      <created>1396932606823</created>
+      <updated>1396932606823</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init_push">
+      <created>1396932672519</created>
+      <updated>1396932672519</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -425,11 +453,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -444,11 +473,45 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="init_push" />
+    <option name="LAST_COMMIT_MESSAGE" value="init_push" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Recommend_engine/API_specifications.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="19" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2100">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Recommend_engine/neo4j_manager/IO_routines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Recommend_engine/middle_ware/Person.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="37" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1635">
+          <folding>
+            <element signature="e#23#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="0" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="2205">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Recommend_engine/API_specifications.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="76" column="19" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2100">
@@ -459,9 +522,7 @@
     <entry file="file://$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-          <folding>
-            <element signature="e#24#66#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -481,13 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Recommend_engine/API_specifications.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="19" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2100">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Recommend_engine/neo4j_manager/IO_routines.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
@@ -497,26 +551,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Recommend_engine/neo4j_manager/db_dec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.7258065" vertical-offset="0" max-vertical-offset="930">
+        <state line="47" column="18" selection-start="1757" selection-end="1757" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
           <folding>
             <element signature="e#23#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Recommend_engine/middle_ware/Common_tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="40" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="0" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="2205">
+        <state line="3" column="36" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2280">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Recommend_engine/API_specifications.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="0" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="2055">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Recommend_engine/middle_ware/Person.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="23" selection-start="2223" selection-end="2223" vertical-scroll-proportion="0.49291167" vertical-offset="763" max-vertical-offset="1905">
           <folding>
-            <element signature="e#24#66#0" expanded="true" />
+            <element signature="e#23#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Recommend_engine/middle_ware/Response_asembly_routines.py">
+    <entry file="file://$PROJECT_DIR$/Recommend_engine/middle_ware/Profile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="50" selection-start="850" selection-end="850" vertical-scroll-proportion="0.14516129" vertical-offset="525" max-vertical-offset="1635">
-          <folding />
+        <state line="104" column="41" selection-start="3162" selection-end="3162" vertical-scroll-proportion="1.6774193" vertical-offset="0" max-vertical-offset="1890">
+          <folding>
+            <element signature="e#23#81#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

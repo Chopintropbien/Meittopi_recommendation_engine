@@ -32,19 +32,18 @@ class Person(CostumNode):
 
 class Profile(CostumNode):
     element_type = "Profile"
-    Pseudo = String()
-    Name = String()
-    Open_ID_Links = String()
+    pseudo = String()
+    name = String()
+    open_ID_Links = String()
     joined_on = Date()
     accessed = Integer()
-    Birthday = Date()
+    birthday = Date()
 
 
 class Review(CostumNode):
     element_type = "Review"
     creation_date = DateTime()
     contents = String()
-
 
 
 class Compliment(CostumNode):
@@ -77,6 +76,7 @@ class Location(CostumNode):
 class Image(CostumNode):
     element_type = "Image"
     type = String()         # Profile, together_picture, picture_at, picture_of
+    pimary = Bool()
     payload = String()
 
 # < ================================ >
@@ -89,7 +89,7 @@ class distance(CostumLink):
     distance = Float()
 
 
-class image(CostumLink):
+class image(CostumLink):  # always described object to image
     label = "image"
     quality = Float()
 
@@ -131,11 +131,17 @@ class belongs_to_list(CostumLink):
 class follows(CostumLink):
     label = "follows"
 
+
 class created_event(CostumLink):
     label = "created_event"
+
 
 class attends_event(CostumLink):
     label = "attend_event"
 
+
 class owns_list(CostumLink):
     label = "owns_list"
+
+class profile(CostumLink):
+    label = "profile"

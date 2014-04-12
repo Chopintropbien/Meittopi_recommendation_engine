@@ -44,5 +44,5 @@ class Graph(Neo4jGraph):
         self.owns_list = self.build_proxy(DDT.owns_list)
 
 
-# create teh graph
+# create the graph
 Graph_DB = Graph()
