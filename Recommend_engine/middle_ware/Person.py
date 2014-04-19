@@ -1,18 +1,23 @@
 __author__ = 'andrei'
-
 from Recommend_engine.neo4j_manager.db_dec import Graph_DB
 from Common_tools import *
-from Profile import Profile
+from datetime import date
+
 
 class Person(object):
 
-    DB_root = Graph_DB.Person
+    DB_root = Graph_DB.Profile
 
     def __init__(self, pseudo = None, node_ID=None, Node=None):
         self.pseudo = ''
-        self.name = ''
         self.node_ID = ''
         self.Node = ''
+
+        self.name = ''
+        self.open_ID_Links = ''
+        self.joined_on = date.today()
+        self.accessed = 0
+        self.birthday = date.today()
 
         if not pseudo and not node_ID and not Node:
             raise Exception("Define pseudo, node_ID or Node")
@@ -35,6 +40,10 @@ class Person(object):
         if self.Node:
             self.pseudo = self.Node.pseudo
             self.name = self.Node.name
+            self.openID_Links = self.Node.openID_Links
+            self.joined_on = self.Node.joined_on
+            self.accessed = self.Node.accessed
+            self.birthday = self.Node.birthday
         else:
             raise Inst_Init_Exception
 
@@ -50,14 +59,23 @@ class Person(object):
             raise Inst_Init_Exception
         else:
             self.Node = nodes[0]
-            self.name = self.Node.name
             self.Node_ID = get_node_ID(self.Node)
+            self.name = self.Node.name
+            self.openID_Links = self.Node.openID_Links
+            self.joined_on = self.Node.joined_on
+            self.accessed = self.Node.accessed
+            self.birthday = self.Node.birthday
+
 
     def _init_by_node(self):
         if self.Node:
+            self.Node_ID = get_node_ID(self.Node)
             self.pseudo = self.Node.pseudo
             self.name = self.Node.name
-            self.Node_ID = get_node_ID(self.Node)
+            self.openID_Links = self.Node.openID_Links
+            self.joined_on = self.Node.joined_on
+            self.accessed = self.Node.accessed
+            self.birthday = self.Node.birthday
         else:
             raise Inst_Init_Exception
 
@@ -73,7 +91,18 @@ class Person(object):
 
 
     def _render_for_json(self):
-        return {"pseudo":self.pseudo, "name":self.pseudo, "picture":self._get_picture(), "Node_ID":self.Node_ID}
+        return {"pseudo":self.pseudo,
+                "name":self.pseudo,
+                "picture":self._get_picture(),
+                "Node_ID":self.Node_ID,
+                "open_ID_Links":self.Node_ID}
+
+
+    def _long_render_for_json(self):
+        return self._render_for_json().update({
+                            "review_list":[],
+                            "followers":[],
+                            "follows":[] })
 
 
     def _get_picture_Node(self):
@@ -92,12 +121,20 @@ class Person(object):
         return ''  # default_picture?
 
 
-    def _get_profile(self):
-        Profile_Gen = self.Node.outV("profile")
-        if not Profile_Gen:
-            return None # manage unregistered user
-        for profile in Profile_Gen:
-            return Profile._init_by_node(profile)
+    def _add_picture(self):
+        pass
+
+
+    def _most_prominent_features(self):
+        pass
+
+    def _leadership_potential(self):
+        # Attention! this one is specific towards certains persons or certains groups
+        pass
+
+
+    def _list_recommended_restaurants(self):
+        pass
 
 
     def _list_reviews(self):

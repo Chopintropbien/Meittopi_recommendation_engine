@@ -20,25 +20,18 @@ class Restaurant(CostumNode):
     element_type = "Restaurant"
     UID = String()
     name = String()
-    founded = Date()
+    opened = Date()
     added = Date()
+    operation_hours = String()# really?
 
 
 class Person(CostumNode):
     element_type = "Person"
-    Pseudo = String()
-    Name = String()
-
-
-class Profile(CostumNode):
-    element_type = "Profile"
     pseudo = String()
     name = String()
     open_ID_Links = String()
     joined_on = Date()
-    accessed = Integer()
     birthday = Date()
-
 
 class Review(CostumNode):
     element_type = "Review"
@@ -143,5 +136,6 @@ class attends_event(CostumLink):
 class owns_list(CostumLink):
     label = "owns_list"
 
-class profile(CostumLink):
-    label = "profile"
+
+class in_a(CostumLink): # used for location ontologies
+    label = "is_a"

@@ -1,0 +1,16 @@
+- What should I return in case a user have no profile picture or a restaurant has no picture?
+- Are we going to manage unregestired users? If yes, how?
+
+- We need to enable users to add information about restaurants such as working/
+closing hours. => Best, create a default weekly outline, then define override
+pattern (vacations, special events, extra openings).
+    => create a default opening pattern (set) for everyday restaurants
+        - Fastfood
+        - Gourmet restaurant
+    => Convert this opening pattern to a string and recreate it from a string
+    => Convert this opening pattern to a
+
+    PB:
+        - how to manage a rule on the override (Christmas, easter, school vactions)?
+        - Other contextual informations (for instance the fact that in Elsass, friday is
+        a holiday?)
