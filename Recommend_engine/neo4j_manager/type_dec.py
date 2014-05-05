@@ -68,7 +68,7 @@ class Location(CostumNode):
 
 class Image(CostumNode):
     element_type = "Image"
-    type = String()         # Profile, together_picture, picture_at, picture_of
+    im_type = String()         # Profile, together_picture, picture_at, picture_of
     pimary = Bool()
     payload = String()
 

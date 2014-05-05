@@ -1,0 +1,7 @@
+
+Demand if pseudo is available:
+    address:    localhost:5000/pseudo_check/<pseudo>
+    type:       GET
+    response example : {"available": true, "pseudo": "andrei"}
+    response type : JSON
+

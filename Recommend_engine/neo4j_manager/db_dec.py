@@ -19,7 +19,6 @@ class Graph(Neo4jGraph):
 
         self.Restaurant = self.build_proxy(DDT.Restaurant)
         self.Person = self.build_proxy(DDT.Person)
-        self.Profile = self.build_proxy(DDT.Profile)
         self.Review = self.build_proxy(DDT.Review)
         self.Compliment = self.build_proxy(DDT.Compliment)
         self.Event = self.build_proxy(DDT.Event)
