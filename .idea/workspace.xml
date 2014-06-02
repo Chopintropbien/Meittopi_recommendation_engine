@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33eee1a9-c28d-4c90-b354-29d25ccbfd75" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Recommend_engine/middle_ware/class_declarations/Review.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recommend_engine/middle_ware/class_declarations/Person.py" afterPath="$PROJECT_DIR$/Recommend_engine/middle_ware/class_declarations/Person.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recommend_engine/middle_ware/class_declarations/Restaurant.py" afterPath="$PROJECT_DIR$/Recommend_engine/middle_ware/class_declarations/Restaurant.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recommend_engine/middle_ware/class_declarations/defaults.py" afterPath="$PROJECT_DIR$/Recommend_engine/middle_ware/class_declarations/defaults.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py" afterPath="$PROJECT_DIR$/Recommend_engine/neo4j_manager/type_dec.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Meittopi_recommendation_engine.iws" />
@@ -571,13 +566,18 @@
       <created>1399265093638</created>
       <updated>1399265093638</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added refactoring modularization">
+      <created>1401721841856</created>
+      <updated>1401721841856</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -592,7 +592,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -613,7 +612,8 @@
     <MESSAGE value="init_push" />
     <MESSAGE value="Merged profile and person, modified the representation length" />
     <MESSAGE value="added pseudo verification and API endpoint for it." />
-    <option name="LAST_COMMIT_MESSAGE" value="added pseudo verification and API endpoint for it." />
+    <MESSAGE value="Added refactoring modularization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added refactoring modularization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
