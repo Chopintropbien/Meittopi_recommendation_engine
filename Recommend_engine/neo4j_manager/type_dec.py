@@ -35,6 +35,7 @@ class Person(CostumNode):
 
 class Review(CostumNode):
     element_type = "Review"
+    uid = String()
     creation_date = DateTime()
     contents = String()
 
@@ -57,7 +58,7 @@ class List(CostumNode):
     name = String()
     private = String()
 
-
+# this thing is in fact an onthology of locations
 class Location(CostumNode):
     element_type = "Location"
     Name_of_location = String()
@@ -66,19 +67,25 @@ class Location(CostumNode):
     Approx_radius = Float()
 
 
+# We don't need additional verification => We are going to make it universal method
 class Image(CostumNode):
     element_type = "Image"
     im_type = String()         # Profile, together_picture, picture_at, picture_of
     pimary = Bool()
     payload = String()
 
+
+# Used to store time and perform coputations for
+# repetitive events, such as opening hours,
+# repetitive events occurences and human-readable transcriptions
+class Time_Object(CostumNode):
+    element_type = "Time_Object"
+    time_type = String()    # opening hours, time of event, time of repetitive event
+
 # < ================================ >
 
 class distance(CostumLink):
     label = "distance"
-    walkable = Bool()
-    bikeable = Bool()
-    driveable = Bool()
     distance = Float()
 
 
@@ -86,10 +93,17 @@ class image(CostumLink):  # always described object to image
     label = "image"
     quality = Float()
 
-
+# What do we use this for? => Delete
 class has_access_to(CostumLink):
     label = "has_access_to"
     hard = Bool()
+    requires_external_auth = Bool()
+
+
+# We would need to run a re-hash over this all module each time
+# to check that those were not changed without the authorisation
+class has_admin_rights_over(CostumLink):
+    label = "has_admin_rights_over"
     requires_external_auth = Bool()
 
 
@@ -112,6 +126,11 @@ class was_reviewed(CostumLink):
 class takes_place_at(CostumLink):
     label = "takes_place_at"
 
+class takes_place_on(CostumLink):
+    label = "takes_place_on"
+
+class open_on(CostumLink):
+    label = "open on"
 
 class located_at(CostumLink):
     label = "located_at"

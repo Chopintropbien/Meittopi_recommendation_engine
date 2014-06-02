@@ -2,8 +2,10 @@ __author__ = 'andrei'
 
 import hashlib
 from Recommend_engine.neo4j_manager.db_dec import Graph_DB
-from Common_tools import *
+from Recommend_engine.middle_ware.Common_tools import *
 from datetime import date
+from warnings import warn
+
 
 class Restaurant(object):
 
@@ -19,7 +21,7 @@ class Restaurant(object):
         self.added = date.today()
 
         if not UID and not node_ID and not Node and not payload:
-            raise Exception("Define pseudo, node_ID or Node")
+            warn("Define uid, node_ID or Node or create a new node")
 
         if Node:
             self.Node = Node
