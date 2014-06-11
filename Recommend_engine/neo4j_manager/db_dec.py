@@ -1,9 +1,10 @@
 __author__ = 'andrei'
 
 from bulbs.neo4jserver import Graph as Neo4jGraph, Config
+from configs import neo4j_url
 import type_dec as DDT
 
-neo4j_url = 'http://localhost:7474'
+
 neo4j_server_local = Config(neo4j_url+ '/db/data/')
 
 # noinspection PyTypeChecker

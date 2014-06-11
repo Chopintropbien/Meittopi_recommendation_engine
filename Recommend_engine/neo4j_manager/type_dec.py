@@ -7,8 +7,7 @@ from bulbs.property import String, Integer, Float, Bool, DateTime, Date
 
 class CostumNode(Node):
     element_type = "CostumNode"
-    ID = String(nullable=False)
-    displayName = String()
+    UID = String(nullable=False)
 
 
 class CostumLink(Relationship):
@@ -18,30 +17,29 @@ class CostumLink(Relationship):
 
 class Restaurant(CostumNode):
     element_type = "Restaurant"
-    UID = String()
     name = String()
-    opened = Date()
+    opening_date = Date()
     added = Date()
     operation_hours = String()# really?
 
 
 class Person(CostumNode):
     element_type = "Person"
-    pseudo = String()
     name = String()
     open_ID_Links = String()
     joined_on = Date()
     birthday = Date()
 
+
 class Review(CostumNode):
     element_type = "Review"
-    uid = String()
     creation_date = DateTime()
     contents = String()
 
 
 class Compliment(CostumNode):
     element_type = "Compliment"
+    contents = String()
     issued_on = DateTime()
     unread = Bool()
 
@@ -63,8 +61,6 @@ class Location(CostumNode):
     element_type = "Location"
     Name_of_location = String()
     Address = String()
-    Coordinates = String()
-    Approx_radius = Float()
 
 
 # We don't need additional verification => We are going to make it universal method

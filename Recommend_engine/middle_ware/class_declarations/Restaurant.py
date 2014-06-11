@@ -9,7 +9,7 @@ from warnings import warn
 
 class Restaurant(object):
 
-    DB_root = Graph_DB.Profile
+    DB_root = Graph_DB.Restaurant
 
     def __init__(self, UID = None, node_ID=None, Node=None, payload=None):
         self.UID = ''
@@ -40,7 +40,7 @@ class Restaurant(object):
 
 
     def _init_by_payload(self, payload):
-
+        pass
 
 
     def _init_by_ID(self):

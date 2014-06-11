@@ -19,7 +19,7 @@ from warnings import warn
     # - Remains in the class:
         # * Internals
         # * Render for JSON
-        # * Add/delete relations routines (Only for person and restaurant)
+        # * Add/delete relations routines (Only for persons and restaurants)
         # * Add/delete like, compliment for Review, Person, Restaurant, List, Event
 
 
@@ -27,7 +27,7 @@ class Review(object):
 
     DB_root = Graph_DB.Review
 
-    def __init__(self, uid=None, node_ID=None, Node=None, anew=False):
+    def __init__(self, uid=None, node_ID=None, Node=None, new=False):
         self.uid = ''
         self.node_ID = ''
         self.node = ''
@@ -47,7 +47,7 @@ class Review(object):
             self._init_by_ID()
 
         if uid:
-            self.uid=uid
+            self.uid = uid
             self._init_by_uid()
 
 
@@ -117,10 +117,10 @@ class Review(object):
 
 
     def _render_for_json(self):
-        return {"uid":self.uid,
-                "contents":self.contents,
-                "pictures":self._get_pictures(),
-                "Node_ID":self.node_ID}
+        return {"uid" : self.uid,
+                "contents" : self.contents,
+                "pictures" : self._get_pictures(),
+                "Node_ID" : self.node_ID}
 
 
     def _get_picture_Nodes(self):
