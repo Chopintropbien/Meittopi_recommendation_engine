@@ -1,10 +1,10 @@
 __author__ = 'andrei'
 
-from Recommend_engine.middle_ware.class_declarations.defaults import default_review_pic
-from Recommend_engine.neo4j_manager.db_dec import Graph_DB
-from Recommend_engine.middle_ware.Common_tools import *
 from datetime import datetime
-from warnings import warn
+
+from configs import default_review_pic
+from Recommend_engine.middle_ware.class_declarations.RootMethods import *
+
 
 
 # Enhancements possibilities:

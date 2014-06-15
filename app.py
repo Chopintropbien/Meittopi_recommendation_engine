@@ -16,17 +16,18 @@ def hello_world():
     return 'Hello World!'
 
 
-@app.route('/pseudo_check/<pseudo>')
+@app.route('user/check_pseudo/<pseudo>')
 def pseudo_check(pseudo):
-    available = Person.check_pseudo_availability(pseudo)
+    available = Person.check_uid_availability(pseudo)
     return jsonify({'pseudo':pseudo, 'available': available})
 
 
-@app.route('/resto_name_check/<resto_name>')
+@app.route('restaurant/check_name/<resto_name>')
 def resto_name_check(resto_name):
     # TODO: correct here
     available = Restaurant._check_if_opened()
     return jsonify({'resto_name':resto_name, 'available': available})
+
 
 
 

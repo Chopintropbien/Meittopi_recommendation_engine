@@ -6,7 +6,7 @@ from collections import OrderedDict
 
 pseudo_available = OrderedDict([
     ("title", "Demand if pseudo is available:"),
-    ("address", app_base_url+"/pseudo_check/<pseudo>"),
+    ("address", app_base_url+"user/check_pseudo/<pseudo>"),
     ("type", "GET"),
     ("response example", "{'available': true, 'pseudo': 'andrei'}"),
     ("response type", "JSON"),
@@ -15,7 +15,7 @@ pseudo_available = OrderedDict([
 
 restaurant_name_available = OrderedDict([
     ("title", "Demand if restaurant name is available:"),
-    ("address", app_base_url+"/resto_name_check/<resto_name>"),
+    ("address", app_base_url+"restaurant/check_name/<resto_name>"),
     ("type", "GET"),
     ("response example", "{'available':true, 'resto_name': 'Chez Jaime - Lausanne'}"),
     ("response type", "JSON"),

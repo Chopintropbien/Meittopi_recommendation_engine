@@ -1,105 +1,23 @@
 __author__ = 'andrei'
 
-from Recommend_engine.middle_ware.class_declarations.defaults import default_User_Pic, reserved_user_pseudos
+from itertools import product
+
+from configs import default_User_Pic
 from Recommend_engine.neo4j_manager.db_dec import Graph_DB
-from Recommend_engine.middle_ware.Common_tools import *
-from datetime import date
-from warnings import warn
+from Recommend_engine.middle_ware.class_declarations import RootMethods as CT
+
+
+# TODO: export to the external methods specific adds of reviews / follow / attend relationships
+# => Is this true this thing? We would like to route the API specs of something like /Person/<personID>/add_follow/<folloedID>
+# => Nope, we are going to operate the info-gets by GETs from adress and info-posts by POSTS to the root address
+
 
 class Person(object):
-
     DB_root = Graph_DB.Person
 
-    def __init__(self, pseudo=None, node_ID=None, Node=None, anew=False):
-        self.pseudo = ''
-        self.node_ID = ''
-        self.node = ''
-
-        self.name = ''
-        self.open_ID_Links = ''
-        self.joined_on = date.today()
-        self.birthday = date.today()
-
-        if not pseudo and not node_ID and not Node and not anew:
-            warn("Define pseudo, node_ID or Node")
-
-        if Node:
-            self.node = Node
-            self._init_by_node()
-
-        if node_ID:
-            self.node_ID = node_ID
-            self._init_by_ID()
-
-        if pseudo:
-            self.pseudo=pseudo
-            self._init_by_pseudo()
-
-
-    def _init_by_node(self):
-        if self.node:
-            self.node_ID = get_node_ID(self.node)
-            self.pseudo = self.node.pseudo
-            self.name = self.node.name
-            self.open_ID_Links = self.node.openID_Links
-            self.joined_on = self.node.joined_on
-            self.birthday = self.node.birthday
-        else:
-            raise Inst_Init_Exception
-
-
-    def _init_by_ID(self):
-        self.node = self.DB_root.get(self.node_ID)
-        self._init_by_node()
-
-
-    def _init_by_pseudo(self):
-        generator = self.DB_root.index.lookup(pseudo=self.pseudo)
-        if not generator:
-            raise Inst_Init_Exception
-        nodes = [node for node in generator]
-        if len(nodes) > 1:
-            raise Inst_Init_Exception
-        else:
-            self.node = nodes[0]
-            self._init_by_node()
-
-
-
     @classmethod
-    def check_pseudo_availability(cls, new_pseudo):
-        if new_pseudo in reserved_user_pseudos:
-            return False
-        node_generator = cls.DB_root.index.lookup(pseudo=new_pseudo)
-        if node_generator:
-            return False
-        return True
-
-    def _create_new(self, name, pseudo, birthday):
-        self.pseudo = pseudo
-        self.name = name
-        self.birthday = birthday
-        self.open_ID_Links =''
-        if self.check_pseudo_availability(pseudo):
-            self.node = self.DB_root.create(pseudo=self.pseudo, name=self.name, joined_on=self.joined_on, birthday=self.birthday)
-            self.node_ID = get_node_ID(self.node)
-            return True
-        else:
-            print 'attempted to duplicate pseudo: %s' % pseudo
-            return False
-
-
-    def _update(self, name=None, joined_on=None, birthday=None):
-        if name is not None:
-            self.name = name
-            self.node.name = name
-        if joined_on is not None:
-            self.joined_on = joined_on
-            self.node.joined_on = joined_on
-        if birthday is not None:
-            self.birthday = birthday
-            self.node.birthday = birthday
-
+    def check_uid_availability(cls, uid):
+        return CT.check_uid_availability(cls, uid)
 
     def _render_for_json(self):
         return {"pseudo":self.pseudo,
@@ -193,3 +111,17 @@ class Person(object):
 
     def _make_follow(self, pseudo_to_follow):
         pass
+
+
+classlist = [Person]
+
+
+for cls, methd in product(classlist, CT.attr_map.iteritems()):
+    setattr(cls,methd[0], methd[1])
+
+
+if __name__ == "__main__":
+    p = Person(anew = {"uid":"andrei2", "Name":"Andrei Kucharavy", "joined_on":"0", "birthday":"-25"})
+    print p.save()
+
+    # ca a avale, mais sans forcement marcher pour autant.

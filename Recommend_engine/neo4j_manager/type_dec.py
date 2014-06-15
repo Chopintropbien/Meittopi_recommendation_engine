@@ -7,7 +7,7 @@ from bulbs.property import String, Integer, Float, Bool, DateTime, Date
 
 class CostumNode(Node):
     element_type = "CostumNode"
-    UID = String(nullable=False)
+    uid = String(nullable=False)
 
 
 class CostumLink(Relationship):
@@ -20,15 +20,14 @@ class Restaurant(CostumNode):
     name = String()
     opening_date = Date()
     added = Date()
-    operation_hours = String()# really?
+    operation_hours = String() # really?
 
 
 class Person(CostumNode):
     element_type = "Person"
     name = String()
-    open_ID_Links = String()
-    joined_on = Date()
-    birthday = Date()
+    joined_on = String()
+    birthday = String()
 
 
 class Review(CostumNode):
