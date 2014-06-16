@@ -37,3 +37,6 @@ To check with Lauriane
  * Do we need to do a pseudo lock once the availability has been checked?
  * Should I specify the user modification (relations included) by the HTML POST requests or by accessing specific APIs with a POST?
  (it looks like the first option is preferable); this will avoid us to
+ * Should we store separately the picture and the reviews or store separately the pictures? (4 Mb x 20 times => a lot of traffic)
+ * How does she wants to see the Datetime? The easiest solution for me is to create a timetuple that she could unwrap with javascript
+ (new Date(xxxxx) statement)

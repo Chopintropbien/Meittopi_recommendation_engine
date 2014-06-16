@@ -8,6 +8,7 @@ from bulbs.property import String, Integer, Float, Bool, DateTime, Date
 class CostumNode(Node):
     element_type = "CostumNode"
     uid = String(nullable=False)
+    active = Bool()  # is used to store the infpormation about user/restaurant deletion. inactive are not shown, but used for computation
 
 
 class CostumLink(Relationship):
@@ -26,8 +27,8 @@ class Restaurant(CostumNode):
 class Person(CostumNode):
     element_type = "Person"
     name = String()
-    joined_on = String()
-    birthday = String()
+    joined_on = Date()
+    birthday = Date()
 
 
 class Review(CostumNode):
@@ -65,9 +66,10 @@ class Location(CostumNode):
 # We don't need additional verification => We are going to make it universal method
 class Image(CostumNode):
     element_type = "Image"
-    im_type = String()         # Profile, together_picture, picture_at, picture_of
-    pimary = Bool()
     payload = String()
+    im_type = String()         # Profile
+    # thumbnail = Bool()  # curretly off
+    # pimary = Bool()
 
 
 # Used to store time and perform coputations for
@@ -87,6 +89,7 @@ class distance(CostumLink):
 class image(CostumLink):  # always described object to image
     label = "image"
     quality = Float()
+
 
 # What do we use this for? => Delete
 class has_access_to(CostumLink):
@@ -121,11 +124,14 @@ class was_reviewed(CostumLink):
 class takes_place_at(CostumLink):
     label = "takes_place_at"
 
+
 class takes_place_on(CostumLink):
     label = "takes_place_on"
 
+
 class open_on(CostumLink):
     label = "open on"
+
 
 class located_at(CostumLink):
     label = "located_at"
@@ -139,17 +145,16 @@ class follows(CostumLink):
     label = "follows"
 
 
-class created_event(CostumLink):
-    label = "created_event"
-
-
 class attends_event(CostumLink):
     label = "attend_event"
 
 
-class owns_list(CostumLink):
-    label = "owns_list"
+class administrates(CostumLink):
+    label = "administrates"
 
 
-class in_a(CostumLink): # used for location ontologies
+class in_a(CostumLink):  # used for location ontologies
     label = "is_a"
+
+class full_image(CostumLink):  # used for storing a full-blown image from a preview
+    label = "full_image"

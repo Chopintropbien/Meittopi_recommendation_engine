@@ -21,7 +21,7 @@ def get_node_ID(Node):
 #<========= Supporting methods =========>
 filter_list = ['bothE','bothV','get', 'get_base_type', 'get_bundle', 'data', 'get_element_key', 'get_element_type',
                'get_index_keys', 'get_index_name', 'get_property_keys', 'get_proxy_class', 'inE', 'inV', 'map','outE',
-               'outV', 'save', 'uid', 'element_type']
+               'outV', 'save', 'uid', 'element_type', 'eid']
 
 
 def name_attrs(bulbs_class):
@@ -54,7 +54,9 @@ def class2node(self):
         raise Inst_Init_Exception
     else:
         for name in names_list:
-            setattr(self.node, name, getattr(self, name))
+            if hasattr(self, name):
+                setattr(self.node, name, getattr(self, name))
+        self.node.save()
 
 
 def node2class(self):
@@ -80,10 +82,10 @@ def check_class_attrs(self):
         return True
 
 
-def check_uid_availability(klass, uid):
+def check_uid_availability(cls, uid):
     if uid in reserved_uids:
         return False
-    node_generator = klass.DB_root.index.lookup(uid=uid)
+    node_generator = cls.DB_root.index.lookup(uid=uid)
     if node_generator:
         return False
     return True
@@ -97,6 +99,15 @@ def assign_uid(self, uid):
     else:
         warn("Attempted to assign a uid already used")
         raise Inst_Init_Exception
+
+
+def assign_no_uid(self):
+    self.node = self.DB_root.create(uid = "blank")
+    self.node_ID = get_node_ID(self.node)
+    self.uid = self.node_ID
+
+    self.node.uid = self.node_ID
+    self.node.save()
 
 
 def common_init(self, uid=False, node_ID=False, node=False, anew=False):
@@ -120,9 +131,11 @@ def common_init(self, uid=False, node_ID=False, node=False, anew=False):
     def _init_by_pseudo():
         generator = self.DB_root.index.lookup(uid=self.uid)
         if not generator:
+            warn('No nodes were found for uid %s' % self.uid)
             raise Inst_Init_Exception
         nodes = [node for node in generator]
         if len(nodes) > 1:
+            warn('Uid %s mapped to several nodes' % self.uid)
             raise Inst_Init_Exception
         else:
             self.node = nodes[0]
@@ -146,8 +159,20 @@ def common_init(self, uid=False, node_ID=False, node=False, anew=False):
         _init_by_pseudo()
 
     if anew:
-        self.assign_uid(anew['uid'])
+        # add a clause if there is no uid: create by node, then use node_Id as the uid
+        if 'uid' in anew:
+            self.assign_uid(anew['uid'])
+        else:
+            self.assign_no_uid()
         self.update(anew)
+
+
+def common_node_delete(self):
+    if not self.node:
+        warn("No node attached to the mirror object %s" % type(self).__name__)
+        raise DB_Exception
+    self.DB_root.delete(self.node_ID)
+    return True
 
 
 def better_repr(self):
@@ -156,12 +181,15 @@ def better_repr(self):
 
 #<========= Routines that need to be shared by all the mirror classes =========>
 attr_map = {
+            "assign_no_uid": assign_no_uid,
             "assign_uid" : assign_uid,
-            "low_dicitify" : class2dict,
+            "dictify" : class2dict,
             "update" : dict2class,
             "save" : class2node,
             "load" : node2class,
             "check" : check_class_attrs,
+            "delete_node" : common_node_delete,
+            "check_uid_availability" : classmethod(check_uid_availability),
             "__init__" : common_init,
             "__repr__" : better_repr,
             "__str__" : better_repr,

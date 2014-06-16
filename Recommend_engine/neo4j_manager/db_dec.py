@@ -39,10 +39,10 @@ class Graph(Neo4jGraph):
         self.located_at = self.build_proxy(DDT.located_at)
         self.belongs_to_list = self.build_proxy(DDT.belongs_to_list)
         self.follows = self.build_proxy(DDT.follows)
-        self.created_event = self.build_proxy(DDT.created_event)
         self.attends_event = self.build_proxy(DDT.attends_event)
-        self.owns_list = self.build_proxy(DDT.owns_list)
-
+        self.owns_list = self.build_proxy(DDT.administrates)
+        self.in_a = self.build_proxy(DDT.in_a)
+        self.full_image = self.build_proxy(DDT.full_image)
 
 # create the graph
 Graph_DB = Graph()
