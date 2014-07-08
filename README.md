@@ -6,6 +6,9 @@ Specifications can be found in the API_specs.md file
 TODO and roadmap:
 =================
 
+TODOs:
+------
+* Implement the error handler to handle an internal error server, catching specifically the errors on initialization
 
 
 Standard IO as a back-end DB

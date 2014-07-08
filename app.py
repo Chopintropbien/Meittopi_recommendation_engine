@@ -2,7 +2,7 @@ __author__ = 'andrei'
 
 from flask import Flask, jsonify, url_for
 from flask.ext.script import Manager
-from Recommend_engine.middle_ware.class_declarations.Person import Person
+from Recommend_engine.middle_ware.class_declarations.HigherClasses import Person
 from Recommend_engine.middle_ware.class_declarations.Restaurant import Restaurant
 from configs import app_base_url
 

@@ -34,6 +34,7 @@ class Person(CostumNode):
 class Review(CostumNode):
     element_type = "Review"
     creation_date = DateTime()
+    title = String()
     contents = String()
 
 

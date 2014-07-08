@@ -6,6 +6,9 @@ from configs import reserved_uids
 from Recommend_engine.neo4j_manager.db_dec import Graph_DB
 
 
+# We will need to add chaindeletes
+
+
 class Inst_Init_Exception(Exception):
     pass
 
@@ -25,13 +28,20 @@ filter_list = ['bothE','bothV','get', 'get_base_type', 'get_bundle', 'data', 'ge
 
 
 def name_attrs(bulbs_class):
+    """
+    Retrieves the list of variables associated with the class from the bulbs type declaration module.
+    :param bulbs_class:
+    :return:
+    """
     baseclass = getattr(bulbs_class, 'element_class')
     lst = [elt for elt in dir(baseclass) if elt[:1] != '_' and elt not in filter_list]
     return lst
 
 
 #<========= Routines that need to be shared by all the mirror classes =========>
+# the general idea is here that there is a correspondence between 3 objects: JSON payload, Python class and bulbs node
 def class2dict(self):
+    #
     names_list = name_attrs(self.DB_root)
     retdict = {}
     for name in names_list:
