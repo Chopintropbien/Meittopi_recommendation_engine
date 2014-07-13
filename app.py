@@ -1,9 +1,8 @@
 __author__ = 'andrei'
 
-from flask import Flask, jsonify, url_for
+from flask import Flask, jsonify, url_for,  session, redirect, escape, request
 from flask.ext.script import Manager
-from Recommend_engine.middle_ware.class_declarations.HigherClasses import Person
-from Recommend_engine.middle_ware.class_declarations.Restaurant import Restaurant
+from Recommend_engine.middle_ware.class_declarations.HigherClasses import Person, Restaurant
 from configs import app_base_url
 
 
@@ -24,10 +23,11 @@ def pseudo_check(pseudo):
 
 @app.route('restaurant/check_name/<resto_name>')
 def resto_name_check(resto_name):
-    # TODO: correct here
-    available = Restaurant._check_if_opened()
+    available = Restaurant.check_uid_availability(resto_name)
     return jsonify({'resto_name':resto_name, 'available': available})
 
+
+@app.route('restaurant/ ')
 
 
 

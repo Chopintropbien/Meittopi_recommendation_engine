@@ -36,9 +36,11 @@ class Review(object):
 
 
     def _full_render_for_json(self, PicNum=3):
-        return self._render_for_json(PicNum).update({
-                            "issuer":self._get_issuer(),
-                            "object":self._get_object()})
+        rd = self._render_for_json(PicNum)
+        rd.update({
+                    "issuer":self._get_issuer(),
+                    "object":self._get_object()})
+        return
 
     # Combined injection from now on to avoid using Person and Restaurant before they are defined ?
     # => Ok, it works for now (not yet called)
@@ -63,6 +65,7 @@ class Review(object):
 class Person(object):
     DB_root = Graph_DB.Person
 
+
     def _render_for_json(self):
         co_return_dict = {  "pseudo":self.uid,
                             "picture":self.get_pictures(1)}
@@ -71,10 +74,12 @@ class Person(object):
 
 
     def _full_render_for_json(self):
-        return self._render_for_json().update({
-                            "review_list":self._list_reviews(),
-                            "followers":self._list_followers(),
-                            "follows":self._list_follows() })
+        rd = self._render_for_json()
+        rd.update({
+                    "review_list":self._list_reviews(),
+                    "followers":self._list_followers(),
+                    "follows":self._list_follows() })
+        return
 
     # Not tested Yet
     def _add_review(self, payload, RestaurantUid):
@@ -88,7 +93,7 @@ class Person(object):
     # Not tested Yet
     def _list_reviews(self):
         review_node_generator = self.node.outV("wrote_review")
-        easy_render(review_node_generator, Review)
+        return easy_render(review_node_generator, Review)
 
     # Not tested Yet
     def _make_follow(self, pseudo_to_follow):
@@ -97,13 +102,13 @@ class Person(object):
     # Not tested Yet
     def _list_followers(self):
         follower_node_generator = self.node.inV("follows")
-        easy_render(follower_node_generator, Person)
+        return easy_render(follower_node_generator, Person)
 
     # Not tested Yet
     def _list_follows(self):
         # what do we do if it follows a Restaurant?
         follows_node_generator = self.node.outV("follows")
-        easy_render(follows_node_generator, Person)
+        return easy_render(follows_node_generator, Person)
 
 
     # <====== Is here for future implementation ======>
@@ -140,6 +145,7 @@ class Person(object):
 class Restaurant(object):
     DB_root = Graph_DB.Restaurant
 
+
     def _render_for_json(self):
         co_return_dict = {  "pseudo":self.uid,
                             "picture":self.get_pictures(1)}
@@ -148,15 +154,17 @@ class Restaurant(object):
 
 
     def _full_render_for_json(self):
-        return self._render_for_json().update({
-                            "review_list":self._list_reviews(),
-                            "followers":self._list_followers()})
+        rd = self._render_for_json()
+        rd.update({
+                    "review_list":self._list_reviews(),
+                    "followers":self._list_followers()})
+        return rd
 
 
     # Not tested Yet
     def _list_reviews(self):
         review_node_generator = self.node.outV("wrote_review")
-        easy_render(review_node_generator, Review)
+        return easy_render(review_node_generator, Review)
 
     # To be implemented in the future: we need to redefine Persons as able to follow an existing Restaurant or Person
     def _list_followers(self):
@@ -181,17 +189,41 @@ if __name__ == "__main__":
     # p = Person(anew = {"uid":"andrei", "name":"Andrei Kucharavy", "joined_on":date(2014,05,26).isoformat(), "birthday":date(1989,4,26)})
     # p.save()
 
+    # r = Restaurant(anew = {"uid":"mlop", "name": "the mloppest mlop","added":date(2014,05,26).isoformat(),"operation_hours":"11-23"})
+    # r.save()
+
+    # p._add_review(pl,"mlop")
+
+    pl={"title": "the mloppest mlop is mloppily mlop",
+                        "contents":"Mloppily mlop blopity blopopblop",
+                        "creation_date":date(2014,05,26).isoformat()}
+
+    r = Restaurant(uid = "mlop")
+
     p = Person(uid = 'andrei')
+
+    print p._list_reviews()
+
+
+
+    print r.dictify()
+    print r._render_for_json()
+    print r._full_render_for_json()
 
     print p.dictify()
     print p._render_for_json()
     print p.get_picture_nodes()
-    p.change_picture('test_picture_payload-22', 'Profile')
-    subnode = p.get_picture_nodes()[0][1][1]
-    im = Image(node = subnode)
-    im.change_quality(1.0)
-    im.change_type("other_profile")
-    print p._render_for_json()
+
+    # p.change_picture('test_picture_payload-22', 'Profile')
+    # subnode = p.get_picture_nodes()[0][1][1]
+    # im = Image(node = subnode)
+    # im.change_quality(1.0)
+    # im.change_type("other_profile")
+    # print p._render_for_json()
+
+    # add a restau, another person, a couple of reviews and test their interaction.
+
+
     # p.delete_node()
 
     pass

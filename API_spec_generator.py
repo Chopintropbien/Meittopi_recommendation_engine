@@ -13,6 +13,7 @@ pseudo_available = OrderedDict([
     ("requires user logged_in", False),
     ])
 
+
 restaurant_name_available = OrderedDict([
     ("title", "Demand if restaurant name is available:"),
     ("address", app_base_url+"restaurant/check_name/<resto_name>"),

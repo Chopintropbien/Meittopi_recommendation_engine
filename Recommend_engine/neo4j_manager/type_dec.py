@@ -8,7 +8,7 @@ from bulbs.property import String, Integer, Float, Bool, DateTime, Date
 class CostumNode(Node):
     element_type = "CostumNode"
     uid = String(nullable=False)
-    active = Bool()  # is used to store the infpormation about user/restaurant deletion. inactive are not shown, but used for computation
+    # active = Bool()  # is used to store the infpormation about user/restaurant deletion. inactive are not shown, but used for computation
 
 
 class CostumLink(Relationship):
@@ -19,8 +19,8 @@ class CostumLink(Relationship):
 class Restaurant(CostumNode):
     element_type = "Restaurant"
     name = String()
-    opening_date = Date()
-    added = Date()
+    opening_date = String()
+    added = String()
     operation_hours = String() # really?
 
 
@@ -33,7 +33,7 @@ class Person(CostumNode):
 
 class Review(CostumNode):
     element_type = "Review"
-    creation_date = DateTime()
+    creation_date = String()
     title = String()
     contents = String()
 
