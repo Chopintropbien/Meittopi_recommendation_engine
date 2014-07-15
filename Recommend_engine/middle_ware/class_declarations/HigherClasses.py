@@ -40,7 +40,7 @@ class Review(object):
         rd.update({
                     "issuer":self._get_issuer(),
                     "object":self._get_object()})
-        return
+        return rd
 
     # Combined injection from now on to avoid using Person and Restaurant before they are defined ?
     # => Ok, it works for now (not yet called)
@@ -79,7 +79,7 @@ class Person(object):
                     "review_list":self._list_reviews(),
                     "followers":self._list_followers(),
                     "follows":self._list_follows() })
-        return
+        return rd
 
     # Not tested Yet
     def _add_review(self, payload, RestaurantUid):
@@ -192,27 +192,27 @@ if __name__ == "__main__":
     # r = Restaurant(anew = {"uid":"mlop", "name": "the mloppest mlop","added":date(2014,05,26).isoformat(),"operation_hours":"11-23"})
     # r.save()
 
-    # p._add_review(pl,"mlop")
 
-    pl={"title": "the mloppest mlop is mloppily mlop",
+
+    print {"title": "the mloppest mlop is mloppily mlop",
                         "contents":"Mloppily mlop blopity blopopblop",
                         "creation_date":date(2014,05,26).isoformat()}
+
+    # p._add_review(pl,"mlop")
 
     r = Restaurant(uid = "mlop")
 
     p = Person(uid = 'andrei')
 
-    print p._list_reviews()
+    # print p._list_reviews()
 
-
-
-    print r.dictify()
+    # print r.dictify()
     print r._render_for_json()
     print r._full_render_for_json()
 
-    print p.dictify()
+    # print p.dictify()
     print p._render_for_json()
-    print p.get_picture_nodes()
+    print p._full_render_for_json()
 
     # p.change_picture('test_picture_payload-22', 'Profile')
     # subnode = p.get_picture_nodes()[0][1][1]

@@ -1,7 +1,6 @@
 __author__ = 'andrei'
 
 from warnings import warn
-
 from configs import reserved_uids
 from Recommend_engine.neo4j_manager.db_dec import Graph_DB
 
@@ -94,11 +93,11 @@ def check_class_attrs(self):
 
 def check_uid_availability(cls, uid):
     if uid in reserved_uids:
-        return False
+        return {'available':False, 'uid':uid}
     node_generator = cls.DB_root.index.lookup(uid=uid)
     if node_generator:
-        return False
-    return True
+        return {'available':False, 'uid':uid}
+    return {'available':True, 'uid':uid}
 
 
 def assign_uid(self, uid):

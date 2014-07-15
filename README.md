@@ -43,3 +43,11 @@ To check with Lauriane
  * Should we store separately the picture and the reviews or store separately the pictures? (4 Mb x 20 times => a lot of traffic)
  * How does she wants to see the Datetime? The easiest solution for me is to create a timetuple that she could unwrap with javascript
  (new Date(xxxxx) statement)
+
+TODO and roadmap:
+=================
+
+Required Python modules:
+    - Flask
+    - Flask-restful
+    - bulbs
