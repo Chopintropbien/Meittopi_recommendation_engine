@@ -1,10 +1,26 @@
 Add a restaurant to the database:
-	address	:	localhost:5000user
+	address	:	localhost:5000/user
 	type	:	POST
 	payload	:	{'uid':'mlop','name':'1','opening_date':2014-5-26,'operation_horus':'11-23'}
 	response code	:	200 if success, 404 in case of failure
 	response example	:	{''}
 	response type	:	JSON
+	
+	//lauriane commentaire: je met tout ce qui me passe par la tête (donc à ne pas faire tout de suite si tu trouve que c'est pas la peine)
+		- c'est à toi de donner un uid a chaque restau
+		- pour les operation_hourus voici la convention: 
+			- lu ma me je ve sa di pour les jour de la semaine. 
+			- '&' veut dire 'et' ex: lu&ve veut dire lundi et vendredi
+			- '-' veut du ... au ... ex: lu-ve veut dire du lundi au vendredi
+			- un plage horraire se dit avec un '-' ex: 10-14 veut dire de 10 à 14h
+			- '&' meme signification pour la plage horraire ex: 10-14&17-22 veut dire de 10 à 14 et de 17 à 22h.
+			- si un jour n'est pas indiqué, ca veut dire que c'est fermé.
+			- ':' entre les jour et les heure
+			- '|' est pour separer deux type d'ouverture differente
+			- ce donne par exemple: lu-je:10-14&17-22|ve&sa:17-00 ou lu-me&ve-di:10-22 
+		- il faut aussi que je te passe la note du restau (de 0 à 5 avec des demi-point)
+		- son adresse
+		- sa localisation long et lat (ou peut etre que c'est toi qui le cherche plutot que moi.)
 
 
 Get a full representation of a restaurant information:
