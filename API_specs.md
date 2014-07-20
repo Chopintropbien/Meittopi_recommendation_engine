@@ -5,7 +5,7 @@ Add a restaurant to the database:
 	response code	:	200 if success, 404 in case of failure
 	response example	:	{''}
 	response type	:	JSON
-
+ 
 
 Get a full representation of a restaurant information:
 	address	:	localhost:5000restaurant
