@@ -1,5 +1,8 @@
 - What should I return in case a user have no profile picture or a restaurant has no picture?
-- Are we going to manage unregestired users? If yes, how?
+    -> on met une photo de profil vide chargé par défaut de mon coté (comme ça pas besoin que tu me l'envoie à chanque fois) 
+    -> de meme pour les restaurants.
+- Are we going to manage unregestired users? If yes, how? 
+    -> non
 
 - We need to enable users to add information about restaurants such as working/
 closing hours. => Best, create a default weekly outline, then define override
